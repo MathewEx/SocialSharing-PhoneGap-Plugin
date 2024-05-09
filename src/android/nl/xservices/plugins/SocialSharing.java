@@ -138,14 +138,14 @@ public class SocialSharing extends CordovaPlugin {
       public void run() {
         Intent draft = new Intent(Intent.ACTION_SENDTO);
         if (notEmpty(message)) {
-          Pattern htmlPattern = Pattern.compile(".*\\<[^>]+>.*", Pattern.DOTALL);
-          if (htmlPattern.matcher(message).matches()) {
-            draft.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(message));
-            draft.setType("text/html");
-          } else {
+          // Pattern htmlPattern = Pattern.compile(".*\\<[^>]+>.*", Pattern.DOTALL);
+          // if (htmlPattern.matcher(message).matches()) {
+          //   draft.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(message));
+          //   draft.setType("text/html");
+          // } else {
             draft.putExtra(android.content.Intent.EXTRA_TEXT, message);
             draft.setType("text/plain");
-          }
+          // }
         }
         if (notEmpty(subject)) {
           draft.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
