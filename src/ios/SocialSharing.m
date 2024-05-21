@@ -91,6 +91,11 @@ static NSString *const kShareOptionIPadCoordinates = @"iPadCoordinates";
 
     NSMutableArray *activityItems = [[NSMutableArray alloc] init];
 
+    if (subject != (id)[NSNull null] && subject != nil) {
+        
+    [activityItems addObject:subject];
+    }
+
     if (message != (id)[NSNull null] && message != nil) {
     [activityItems addObject:message];
     }
